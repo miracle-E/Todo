@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/stylesheets/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+
+        <div class="todo">
+            <form action="/" method="POST" class="todo-header">
+                <input type="text" name="content">
+                <button type="submit"> <span class="fa fa-plus"> </span></button>
+            </form>
+
+            <!-- <ul class="todo-list">
+                <li class="todo-list-item">
+                    <div class="todo-list-item-name"> </div>
+                    <a href="/" class="edit">
+                        <span class="fa fa-pencil"></span>
+                    </a>
+                    <a href="/" class="remove">
+                        <span class="fa fa-trash"></span>
+                    </a>
+                </li>
+
+            </ul> -->
+            <ul class="todo-list">
+                <% todoTasks.forEach(details => { %>
+                <li class="todo-list-item">
+                <div class="todo-list-item-name"><%= details.content %></div>
+                <a href="/edit/<%= details._id %>" class="edit">
+                <span class="fa fa-pencil"></span>
+                </a>
+                <a href="/remove/<%= details._id %>" class="remove">
+                <span class="fa fa-trash"></span>
+                </a>
+                </li>
+                <% }) %>
+                </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>
