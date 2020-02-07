@@ -1,0 +1,84 @@
+// mongoose.connect(config.getDbconnectionString());
+// mongoose.connect(
+// 	config.getDbconnectionString(),
+// 	{
+// 		useNewUrlParser: true,
+// 		useCreateIndex: true,
+// 		useFindAndModify: false,
+// 		useUnifiedTopology: true
+// 	},
+// 	function(err, client) {
+// 		if (err) console.log(err);
+// 		console.log('COnnection passed');
+// 	}
+// );
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.get('/api/todos/:uname', function(req, res) {
+// 	Todos.find({ username: req.params.uname }, function(err, todos) {
+// 		if (err) throw err;
+// 		res.send(todos);
+// 	});
+// });
+// app.get('/api/todo/:id', function(req, res) {
+// 	Todos.findById({ _id: req.params.id }, function(err, todo) {
+// 		if (err) throw err;
+// 		res.send(todo);
+// 	});
+// });
+// app.post('/api/todo', function(req, res) {
+// 	if (req.body.id) {
+// 		Todos.findByIdAndUpdate(
+// 			req.body.id,
+// 			{
+// 				todo: req.body.todo,
+// 				isDone: req.body.isDone,
+// 				hasAttachment: req.body.hasAttachment
+// 			},
+// 			function(err, todo) {
+// 				if (err) throw err;
+// 				res.send('Success');
+// 			}
+// 		);
+// 	} else {
+// 		var newTodo = Todos({
+// 			username: 'ezinne',
+// 			todo: req.body.todo,
+// 			isDone: req.body.isDone,
+// 			hasAttachment: req.body.hasAttachment
+// 		});
+// 		newTodo.save(function(err) {
+// 			if (err) throw err;
+// 			res.send('Success');
+// 		});
+// 	}
+// });
+// app.delete('/api/todo', function(req, res) {
+// 	Todo.findByIdAndRemove(req.body.id, function(err) {
+// 		if (err) throw err;
+// 		res.send('Success');
+// 	});
+// });
+// app.get('/api/setupTodos', function(req, res) {
+// 	// seed database
+// 	var starterTodos = [
+// 		{
+// 			username: 'ezinne',
+// 			todo: 'learn node',
+// 			isDone: false,
+// 			hasAttachment: false
+// 		},
+// 		{
+// 			username: 'ezinne',
+// 			todo: 'Read a book',
+// 			isDone: false,
+// 			hasAttachment: false
+// 		}
+// 	];
+// 	Todos.create(starterTodos, function(err, results) {
+// 		res.send(results);
+// 	});
+// });
+// // setupController(app);
+// // apiControllers(app);
+// // app.listen(port);
